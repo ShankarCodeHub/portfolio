@@ -40,7 +40,7 @@ import {
 } from './data/portfolioData';
 
 // Relative path to the generated user photo cutout
-const portraitImg = "/src/assets/images/uma_portrait_1782624449621.jpg";
+const portraitImg = "/images/uma_portrait_1782624449621.jpg";
 
 const renderSkillIcon = (iconName: string) => {
   switch (iconName) {
@@ -369,7 +369,7 @@ export default function App() {
           <a href="#home" className="flex items-center space-x-2 group">
             <div className={`w-14 h-14 rounded-xl overflow-hidden shadow-lg transition-transform duration-300 flex items-center justify-center border ${isDark ? 'shadow-indigo-500/10 border-gray-850 group-hover:scale-105' : 'shadow-gray-200 border-gray-200 group-hover:scale-105'}`}>
               <img
-                src="/src/assets/images/logo.jpg"
+                src="/images/logo.jpg"
                 alt="US Logo"
                 className="w-full h-full object-cover"
               />
@@ -589,7 +589,7 @@ export default function App() {
                         }`}
                       >
                         <a
-                          href="/src/assets/images/resume.pdf"
+                          href="/images/resume.pdf"
                           target="_blank"
                           rel="noreferrer"
                           className={`flex items-center space-x-2.5 px-4 py-3 rounded-lg text-xs font-semibold transition-colors duration-300 ${
@@ -602,7 +602,7 @@ export default function App() {
                           <span>View Resume</span>
                         </a>
                         <a
-                          href="/src/assets/images/resume.pdf"
+                          href="/images/resume.pdf"
                           download="Uma_Shankar_Resume.pdf"
                           className={`flex items-center space-x-2.5 px-4 py-3 rounded-lg text-xs font-semibold transition-colors duration-300 ${
                             isDark 
@@ -1420,7 +1420,7 @@ export default function App() {
           <div className="flex items-center space-x-3">
             <div className={`w-12 h-12 rounded-lg overflow-hidden flex items-center justify-center border transition-colors duration-300 ${isDark ? 'border-gray-850' : 'border-gray-200'}`}>
               <img
-                src="/src/assets/images/logo.jpg"
+                src="/images/logo.jpg"
                 alt="US Logo"
                 className="w-full h-full object-cover"
               />
