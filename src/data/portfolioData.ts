@@ -32,7 +32,7 @@ export const PERSONAL_DETAILS = {
   email: 'shankar37337@gmail.com',
   github: 'https://github.com/ShankarCodeHub', // User github link
   linkedin: 'https://www.linkedin.com/in/uma-shankar-a376b6218', // User linkedin link
-  location: 'India',
+  location: 'Dehradun, Uttarakhand, India',
   tagline: 'Passionate Frontend Engineer specializing in intuitive React frontends and modern UI/UX design. Ready for internships and frontend roles.',
   about: 'I am a pre-final year B.Tech Computer Science student with a strong foundation in data structures, algorithms, and full-stack software development. I build end-to-end applications combining the robust backend capabilities of Java, Spring Boot, and SQL with the dynamic, reactive user experiences of React and Tailwind CSS.',
 };

@@ -39,8 +39,16 @@ import {
   Project
 } from './data/portfolioData';
 
-// Relative path to the generated user photo cutout
-const portraitImg = "/src/assets/images/uma_portrait_1782624449621.jpg";
+import portraitImg from './assets/images/uma_portrait_1782624449621.jpg';
+import logoImg from './assets/images/logo.jpg';
+import resumePdf from './assets/images/resume.pdf';
+
+const GitHubBrandIcon = ({ className = "w-5 h-5 shrink-0" }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 512 512">
+    <path d="M0 0h512v512H0z" fill="none" />
+    <path fillRule="evenodd" fill="currentColor" d="M256 6.3C114.6 6.3 0 120.9 0 262.3c0 113.3 73.3 209 175 242.9c12.8 2.2 17.6-5.4 17.6-12.2c0-6.1-.3-26.2-.3-47.7c-64.3 11.8-81-15.7-86.1-30.1c-2.9-7.4-15.4-30.1-26.2-36.2c-9-4.8-21.8-16.6-.3-17c20.2-.3 34.6 18.6 39.4 26.2c23 38.7 59.8 27.8 74.6 21.1c2.2-16.6 9-27.8 16.3-34.2c-57-6.4-116.5-28.5-116.5-126.4c0-27.8 9.9-50.9 26.2-68.8c-2.6-6.4-11.5-32.6 2.6-67.8c0 0 21.4-6.7 70.4 26.2c20.5-5.8 42.2-8.6 64-8.6s43.5 2.9 64 8.6c49-33.3 70.4-26.2 70.4-26.2c14.1 35.2 5.1 61.4 2.6 67.8c16.3 17.9 26.2 40.6 26.2 68.8c0 98.2-59.8 120-116.8 126.4c9.3 8 17.3 23.4 17.3 47.4c0 34.2-.3 61.8-.3 70.4c0 6.7 4.8 14.7 17.6 12.2C438.7 471.3 512 375.3 512 262.3c0-141.4-114.6-256-256-256" />
+  </svg>
+);
 
 const renderSkillIcon = (iconName: string) => {
   switch (iconName) {
@@ -170,12 +178,7 @@ const renderSkillIcon = (iconName: string) => {
         </svg>
       );
     case 'github':
-      return (
-        <svg className="w-5 h-5 shrink-0 text-white" viewBox="0 0 512 512">
-          <path d="M0 0h512v512H0z" fill="none" />
-          <path fillRule="evenodd" fill="currentColor" d="M256 6.3C114.6 6.3 0 120.9 0 262.3c0 113.3 73.3 209 175 242.9c12.8 2.2 17.6-5.4 17.6-12.2c0-6.1-.3-26.2-.3-47.7c-64.3 11.8-81-15.7-86.1-30.1c-2.9-7.4-15.4-30.1-26.2-36.2c-9-4.8-21.8-16.6-.3-17c20.2-.3 34.6 18.6 39.4 26.2c23 38.7 59.8 27.8 74.6 21.1c2.2-16.6 9-27.8 16.3-34.2c-57-6.4-116.5-28.5-116.5-126.4c0-27.8 9.9-50.9 26.2-68.8c-2.6-6.4-11.5-32.6 2.6-67.8c0 0 21.4-6.7 70.4 26.2c20.5-5.8 42.2-8.6 64-8.6s43.5 2.9 64 8.6c49-33.3 70.4-26.2 70.4-26.2c14.1 35.2 5.1 61.4 2.6 67.8c16.3 17.9 26.2 40.6 26.2 68.8c0 98.2-59.8 120-116.8 126.4c9.3 8 17.3 23.4 17.3 47.4c0 34.2-.3 61.8-.3 70.4c0 6.7 4.8 14.7 17.6 12.2C438.7 471.3 512 375.3 512 262.3c0-141.4-114.6-256-256-256" />
-        </svg>
-      );
+      return <GitHubBrandIcon className="w-5 h-5 shrink-0 text-white" />;
     case 'vscode':
       return (
         <svg className="w-5 h-5 shrink-0" viewBox="0 0 256 256">
@@ -369,7 +372,7 @@ export default function App() {
           <a href="#home" className="flex items-center space-x-2 group">
             <div className={`w-14 h-14 rounded-xl overflow-hidden shadow-lg transition-transform duration-300 flex items-center justify-center border ${isDark ? 'shadow-indigo-500/10 border-gray-850 group-hover:scale-105' : 'shadow-gray-200 border-gray-200 group-hover:scale-105'}`}>
               <img
-                src="/src/assets/images/logo.jpg"
+                src={logoImg}
                 alt="US Logo"
                 className="w-full h-full object-cover"
               />
@@ -589,7 +592,7 @@ export default function App() {
                         }`}
                       >
                         <a
-                          href="/src/assets/images/resume.pdf"
+                          href={resumePdf}
                           target="_blank"
                           rel="noreferrer"
                           className={`flex items-center space-x-2.5 px-4 py-3 rounded-lg text-xs font-semibold transition-colors duration-300 ${
@@ -602,7 +605,7 @@ export default function App() {
                           <span>View Resume</span>
                         </a>
                         <a
-                          href="/src/assets/images/resume.pdf"
+                          href={resumePdf}
                           download="Uma_Shankar_Resume.pdf"
                           className={`flex items-center space-x-2.5 px-4 py-3 rounded-lg text-xs font-semibold transition-colors duration-300 ${
                             isDark 
@@ -1072,7 +1075,7 @@ export default function App() {
                         className={`p-1.5 rounded transition-colors ${isDark ? 'hover:bg-white/5 hover:text-indigo-400' : 'hover:bg-gray-100 hover:text-indigo-600'}`}
                         title="View Source on GitHub"
                       >
-                        <Github className="w-5 h-5" />
+                        <GitHubBrandIcon className="w-5 h-5 shrink-0" />
                       </a>
                       {project.demo && (
                         <a
@@ -1295,9 +1298,9 @@ export default function App() {
               {/* Profiles */}
               <div className="flex items-center space-x-4 pt-4 text-gray-450">
                 <a href={PERSONAL_DETAILS.github} target="_blank" rel="noopener noreferrer" className={`p-3 rounded-lg border transition-all shadow ${
-                  isDark ? 'bg-gray-900/50 border-gray-800 text-gray-450 hover:text-indigo-400 hover:border-indigo-500/30' : 'bg-gray-50 border-gray-200 text-gray-600 hover:text-indigo-600 hover:border-indigo-500/30 hover:bg-white'
+                  isDark ? 'bg-gray-900/50 border-gray-850 text-gray-450 hover:text-indigo-400 hover:border-indigo-500/30' : 'bg-gray-50 border-gray-200 text-gray-600 hover:text-indigo-600 hover:border-indigo-500/30 hover:bg-white'
                 }`}>
-                  <Github className="w-5 h-5" />
+                  <GitHubBrandIcon className="w-5 h-5 shrink-0" />
                 </a>
                 <a href={PERSONAL_DETAILS.linkedin} target="_blank" rel="noopener noreferrer" className={`p-3 rounded-lg border transition-all shadow ${
                   isDark ? 'bg-gray-900/50 border-gray-800 hover:border-blue-500/30' : 'bg-gray-50 border-gray-200 hover:border-blue-500/30 hover:bg-white'
@@ -1420,7 +1423,7 @@ export default function App() {
           <div className="flex items-center space-x-3">
             <div className={`w-12 h-12 rounded-lg overflow-hidden flex items-center justify-center border transition-colors duration-300 ${isDark ? 'border-gray-850' : 'border-gray-200'}`}>
               <img
-                src="/src/assets/images/logo.jpg"
+                src={logoImg}
                 alt="US Logo"
                 className="w-full h-full object-cover"
               />
